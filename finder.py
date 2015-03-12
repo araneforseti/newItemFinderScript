@@ -1,12 +1,21 @@
+#!/usr/bin/python
+
+import sys
+
+if len(sys.argv) != 3:
+  print len(sys.argv)
+  print sys.argv
+  sys.exit("Usage: python finder.py <file1> <file2>")
+
 errorCodes = []
-with open("errorCodesMapping.properties", "r") as ins:
+with open(sys.argv[1], "r") as ins:
   for line in ins:
     split = line.split("|")
     if len(split) > 1:
       errorCodes.append([split[1], split[2].strip("\n")])
 
 knownErrorCodes = []
-with open("errorCodeDoc.csv") as ins:
+with open(sys.argv[2]) as ins:
   for line in ins:
     split = line.split(",")
     if len(split) > 1:
