@@ -16,12 +16,12 @@ if len(sys.argv) != 3:
   print sys.argv
   sys.exit("Usage: python finder.py <potentialAdditionalList> <knownItemsList>")
 
-errorCodes = create_list_from_file(sys.argv[1], "|")
+potentialItems = create_list_from_file(sys.argv[1], "|")
 
-knownErrorCodes = create_list_from_file(sys.argv[2], ",")
+knownItems = create_list_from_file(sys.argv[2], ",")
   
-unknownErrorCodes = list(set(errorCodes) - set(knownErrorCodes))
+newItems = list(set(potentialItems) - set(knownItems))
 
-print "%s new items found" % len(unknownErrorCodes)
-for error in unknownErrorCodes:
-  print error
+print "%s new items found" % len(newItems)
+for item in newItems:
+  print item
