@@ -5,7 +5,7 @@ import sys
 if len(sys.argv) != 3:
   print len(sys.argv)
   print sys.argv
-  sys.exit("Usage: python finder.py <file1> <file2>")
+  sys.exit("Usage: python finder.py <potentialAdditionalList> <knownItemsList>")
 
 errorCodes = []
 with open(sys.argv[1], "r") as ins:
